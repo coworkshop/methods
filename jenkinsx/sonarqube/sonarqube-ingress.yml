@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sonarqube
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: sonarqube.jx.mentordigital.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: dev-sonarqube
+          servicePort: 9000
