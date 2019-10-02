@@ -10,5 +10,5 @@ Modify the sonarqube-ingress.yml with your domain name, and if you need other pl
 	kubectl apply -f sonarqube-ingress.yml  
 	
 	
-Adding sonarqube processing as part of a build pipeline can be done as in the jenkins-x.yml file
+Adding sonarqube processing as part of a build pipeline can be done as in the [jenkins-x.yml](jenkins-x.yml) file
 
