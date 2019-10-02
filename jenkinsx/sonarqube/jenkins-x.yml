@@ -1,0 +1,16 @@
+buildPack: maven-java11
+pipelineConfig:
+  agent:
+    image: maven-java11
+  env:
+    - name: _JAVA_OPTIONS
+      value: "-Dsonar.host.url=http://dev-sonarqube:9000  -Dsonar.login=<GENERATED TOKEN> -Dsonar.projectKey=<PROJECT KEY> -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"
+  pipelines:
+    overrides:
+      -  type: replace
+         name: mvn-install
+         steps:
+           - sh: mvn install sonar:sonar
+             name: run-sonar
+
+
