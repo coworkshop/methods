@@ -5,7 +5,7 @@ Sonarqube can be installed in an existing JenkinsX installation using the follow
 Modify the sonarqube-ingress.yml with your domain name, and if you need other plugins pre-installed, in sonarqube.yml
 
 
-	jx step helm install --set-file sonarqube.yml --name dev stable/sonarqube
+	jx step helm install --set-file sonarqube.yml --name dev stable/sonarqube --namespace jx
 
 	kubectl apply -f sonarqube-ingress.yml  
 	
